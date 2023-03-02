@@ -1,9 +1,11 @@
+
 version: 1.0
 runtime: php81
 build:
   commands:
     build:
-      - easy_install supervisor
+      - PYTHON=python2 amazon-linux-extras install epel
+      - yum -y install supervisor
 run:
   runtime-version: nginxtest
   command: supervisord
