@@ -4,8 +4,8 @@ set -o monitor
 
 trap exit SIGCHLD
 
-# Start nginx or apache, in this example, nginx
-nginx -g 'daemon off;' &
+# Start apache
+httpd -DFOREGROUND &
 
 # Start php-fpm
 php-fpm -F &
